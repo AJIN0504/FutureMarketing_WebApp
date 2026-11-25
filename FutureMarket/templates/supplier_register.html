@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Supplier Registration{% endblock %}
+
+{% block hero %}
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Supplier Network</span>
+    <h1>Supplier Registration</h1>
+    <p>Join the Future Marketing supplier network and get your products for schools, colleges and hospitals across Kerala.</p>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="page-section">
+  <div class="container two-col">
+    <aside class="card card-navy">
+      <h2>Why register with us?</h2>
+      <p>One registration puts you on our approved supplier list.</p>
+      <ul class="benefits">
+        <li><span class="check">&#10003;</span> Direct access to institutional bulk orders</li>
+        <li><span class="check">&#10003;</span> Association with an authorized Kitex distributor</li>
+        <li><span class="check">&#10003;</span> Quick confirmation by email</li>
+        <li><span class="check">&#10003;</span> Transparent, on-time payment terms</li>
+      </ul>
+    </aside>
+
+    <div class="card">
+      <h2>Create your supplier account</h2>
+      <p class="card-sub">Fields marked by validation messages must be corrected before submitting.</p>
+      <form method="POST" novalidate>
+        {% csrf_token %}
+        {% if form.non_field_errors %}<div class="form-alert">{{ form.non_field_errors }}</div>{% endif %}
+
+        {% include "_field.html" with field=form.fullname %}
+        {% include "_field.html" with field=form.company_name %}
+        <div class="form-row">
+          {% include "_field.html" with field=form.email %}
+          {% include "_field.html" with field=form.phone %}
+        </div>
+        {% include "_field.html" with field=form.address %}
+        <div class="form-row">
+          {% include "_field.html" with field=form.password %}
+          {% include "_field.html" with field=form.confirm_password %}
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+        <p class="form-foot">Already a customer? <a href="{% url 'reviews' %}">Leave a review</a> &middot; <a href="{% url 'welcome' %}">Back to home</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

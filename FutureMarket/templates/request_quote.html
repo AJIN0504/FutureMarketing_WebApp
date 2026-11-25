@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Request a Quote{% endblock %}
+
+{% block hero %}
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Bulk Orders &amp; Samples</span>
+    <h1>Request a Quote</h1>
+    <p>Tell us what you need and our  team will reply with a custom quote within one business day.</p>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="page-section">
+  <div class="container one-col">
+    <div class="card">
+      <h2>Quote details</h2>
+      <p class="card-sub">School, college and hospital uniforms, or Kitex distribution enquiries.</p>
+      <form method="POST" novalidate>
+        {% csrf_token %}
+        {% if form.non_field_errors %}<div class="form-alert">{{ form.non_field_errors }}</div>{% endif %}
+        <div class="form-row">
+          {% include "_field.html" with field=form.name %}
+          {% include "_field.html" with field=form.organisation %}
+        </div>
+        <div class="form-row">
+          {% include "_field.html" with field=form.email %}
+          {% include "_field.html" with field=form.phone %}
+        </div>
+        <div class="form-row">
+          {% include "_field.html" with field=form.category %}
+          {% include "_field.html" with field=form.quantity %}
+        </div>
+        {% include "_field.html" with field=form.message %}
+        <button type="submit" class="btn btn-primary btn-block">Send request</button>
+        <p class="form-foot">Prefer to talk? <a href="tel:+919633779978">+91 96337 79978</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

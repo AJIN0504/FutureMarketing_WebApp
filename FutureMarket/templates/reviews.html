@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Customer Reviews{% endblock %}
+
+{% block hero %}
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Customer Feedback</span>
+    <h1>Customer Reviews &amp; Ratings</h1>
+    <p>Your feedback helps us keep delivering quality uniforms and fabrics. Rate your experience with Future Marketing.</p>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="page-section">
+  <div class="container one-col">
+
+    <div class="card rating-summary">
+      <div class="avg-box">
+        <div class="avg-num">{% if total %}{{ avg|floatformat:1 }}{% else %}&ndash;{% endif %}</div>
+        <div class="avg-stars" aria-hidden="true">{{ avg_stars }}</div>
+        <div class="avg-count">{{ total }} review{{ total|pluralize }}</div>
+      </div>
+      <div>
+        {% for row in distribution %}
+        <div class="dist-row">
+          <span>{{ row.star }} &#9733;</span>
+          <div class="dist-bar"><span style="width:{{ row.pct }}%"></span></div>
+          <span>{{ row.count }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:28px">
+      <h2>Write a review</h2>
+      <p class="card-sub">Select a star rating and share your experience.</p>
+      <form method="POST" novalidate>
+        {% csrf_token %}
+        {% include "_field.html" with field=form.name %}
+
+        <div class="field{% if form.rating.errors %} has-error{% endif %}">
+          <label>Your rating</label>
+          <div class="star-input">
+            {% for i in "54321" %}
+              <input type="radio" id="star{{ i }}" name="rating" value="{{ i }}"{% if form.rating.value|stringformat:"s" == i %} checked{% endif %}>
+              <label for="star{{ i }}" title="{{ i }} star{{ i|pluralize }}">&#9733;</label>
+            {% endfor %}
+          </div>
+          {% for error in form.rating.errors %}<span class="err">{{ error }}</span>{% endfor %}
+        </div>
+
+        {% include "_field.html" with field=form.comment %}
+        <button type="submit" class="btn btn-primary btn-block">Submit review</button>
+      </form>
+    </div>
+
+    <div class="review-list">
+      {% for review in page %}
+      <article class="review-card">
+        <div class="review-head">
+          <span class="review-name">{{ review.name }}</span>
+          <span class="review-stars" aria-label="{{ review.rating }} out of 5">{{ review.stars }}</span>
+        </div>
+        <p>{{ review.comment|linebreaksbr }}</p>
+        <div class="review-date">{{ review.created_at|date:"d M Y" }}</div>
+      </article>
+      {% empty %}
+      <p class="empty">No reviews yet. Be the first to rate us!</p>
+      {% endfor %}
+    </div>
+
+    {% if page.has_other_pages %}
+    <div class="pager">
+      {% if page.has_previous %}<a href="?page={{ page.previous_page_number }}">&larr; Newer</a>{% endif %}
+      <span>Page {{ page.number }} of {{ page.paginator.num_pages }}</span>
+      {% if page.has_next %}<a href="?page={{ page.next_page_number }}">Older &rarr;</a>{% endif %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Future Marketing - Premium uniform manufacturer & authorized Kitex distributor in Meeyannoor, Kollam, Kerala. School, college, and hospital uniforms.">
+<title>Future Marketing | Premium Clothing , fabrics & Kitex Distributor</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* ============ RESET & BASE ============ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root{
+    --navy-900:#071a33;
+    --navy-800:#0a1f3d;
+    --navy-700:#11305a;
+    --navy-600:#1a4070;
+    --gold:#d4af37;
+    --gold-light:#e8c965;
+    --blue:#4a90e2;
+    --blue-soft:#e8f1fc;
+    --white:#ffffff;
+    --off-white:#f6f9fc;
+    --gray-100:#f1f5f9;
+    --gray-300:#cbd5e1;
+    --gray-500:#64748b;
+    --gray-700:#334155;
+    --shadow-sm:0 2px 8px rgba(10,31,61,.06);
+    --shadow-md:0 10px 30px rgba(10,31,61,.10);
+    --shadow-lg:0 20px 50px rgba(10,31,61,.15);
+    --radius:14px;
+    --radius-sm:10px;
+    --transition:.3s cubic-bezier(.4,0,.2,1);
+  }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body{
+    font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color:var(--gray-700);
+    background:var(--white);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4 { font-family:'Poppins', sans-serif; color:var(--navy-800); line-height:1.2; }
+  a { color:inherit; text-decoration:none; }
+  img { max-width:100%; display:block; }
+  .container{ width:100%; max-width:1200px; margin:0 auto; padding:0 24px; }
+  section { scroll-margin-top: 78px; }
+
+  /* ============ HEADER ============ */
+  .site-header{
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    background:rgba(10,31,61,.96);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(212,175,55,.18);
+    transition:background var(--transition);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    height:70px;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand-logo{
+    width:46px; height:46px; flex-shrink:0;
+    display:block;
+  }
+  .brand-text{ display:flex; flex-direction:column; line-height:1.1; }
+  .brand-name{
+    font-family:'Poppins',sans-serif; font-weight:800;
+    font-size:1.18rem; color:var(--white); letter-spacing:.3px;
+  }
+  .brand-name .gold{ color:var(--white); }
+  .brand-tagline{
+    font-size:.66rem; letter-spacing:2.4px; text-transform:uppercase;
+    color:#ff4757; font-weight:600; margin-top:2px;
+  }
+  .nav-links{ display:flex; align-items:center; gap:32px; list-style:none; }
+  .nav-links a{
+    color:rgba(255,255,255,.85); font-weight:500; font-size:.92rem;
+    position:relative; padding:6px 0; transition:color var(--transition);
+  }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:0; height:2px; width:0;
+    background:var(--gold); transition:width var(--transition);
+  }
+  .nav-links a:hover{ color:var(--white); }
+  .nav-links a:hover::after{ width:100%; }
+  .nav-cta{
+    background:var(--gold); color:var(--navy-800)!important;
+    padding:9px 20px; border-radius:50px; font-weight:600;
+    transition:transform var(--transition), background var(--transition);
+  }
+  .nav-cta:hover{ background:var(--gold-light); transform:translateY(-1px); }
+  .nav-cta::after{ display:none; }
+  .menu-toggle{
+    display:none; background:none; border:none; cursor:pointer;
+    flex-direction:column; gap:5px; padding:6px;
+  }
+  .menu-toggle span{
+    display:block; width:26px; height:2.5px; background:var(--white);
+    border-radius:2px; transition:all var(--transition);
+  }
+  .menu-toggle.active span:nth-child(1){ transform:translateY(7.5px) rotate(45deg); }
+  .menu-toggle.active span:nth-child(2){ opacity:0; }
+  .menu-toggle.active span:nth-child(3){ transform:translateY(-7.5px) rotate(-45deg); }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(74,144,226,.22), transparent 50%),
+      radial-gradient(circle at 10% 90%, rgba(212,175,55,.15), transparent 45%),
+      linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 50%, var(--navy-700) 100%);
+    color:var(--white);
+    padding:140px 0 100px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:""; position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size:60px 60px;
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr .85fr;
+    gap:60px; align-items:center; position:relative;
+  }
+  .hero-eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(212,175,55,.14); border:1px solid rgba(212,175,55,.35);
+    color:var(--gold-light); padding:7px 16px; border-radius:50px;
+    font-size:.78rem; font-weight:600; letter-spacing:.6px;
+    text-transform:uppercase; margin-bottom:24px;
+  }
+  .hero-eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--gold); }
+  .hero h1{
+    color:var(--white); font-size:clamp(2rem, 4.5vw, 3.4rem);
+    font-weight:800; margin-bottom:20px; letter-spacing:-.5px;
+  }
+  .hero h1 .gold-underline{
+    position:relative; color:var(--gold-light); display:inline-block;
+  }
+  .hero h1 .gold-underline::after{
+    content:""; position:absolute; left:0; bottom:4px; width:100%; height:8px;
+    background:rgba(212,175,55,.25); z-index:-1; border-radius:4px;
+  }
+  .hero p.sub{
+    font-size:1.12rem; color:rgba(255,255,255,.82);
+    max-width:560px; margin-bottom:36px; line-height:1.7;
+  }
+  .hero-cta{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:9px;
+    padding:14px 28px; border-radius:50px; font-weight:600; font-size:.98rem;
+    cursor:pointer; border:none; font-family:inherit;
+    transition:all var(--transition); text-align:center;
+  }
+  .btn-primary{ background:var(--gold); color:var(--navy-800); }
+  .btn-primary:hover{ background:var(--gold-light); transform:translateY(-2px); box-shadow:0 10px 25px rgba(212,175,55,.35); }
+  .btn-outline{
+    background:transparent; color:var(--white);
+    border:2px solid rgba(255,255,255,.4);
+  }
+  .btn-outline:hover{ border-color:var(--white); background:rgba(255,255,255,.08); }
+  .btn-navy{ background:var(--navy-800); color:var(--white); }
+  .btn-navy:hover{ background:var(--navy-700); transform:translateY(-2px); }
+  .btn-whatsapp{ background:#25D366; color:#fff; }
+  .btn-whatsapp:hover{ background:#1eb858; transform:translateY(-2px); }
+
+  .hero-stats{
+    display:flex; gap:36px; margin-top:48px; flex-wrap:wrap;
+  }
+  .hero-stat .num{
+    font-family:'Poppins',sans-serif; font-size:1.9rem; font-weight:800;
+    color:var(--gold-light); line-height:1;
+  }
+  .hero-stat .lbl{ font-size:.82rem; color:rgba(255,255,255,.7); margin-top:6px; }
+
+  /* Hero visual card */
+  .hero-visual{ position:relative; }
+  .hero-card{
+    background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14);
+    border-radius:24px; padding:36px; backdrop-filter:blur(10px);
+    box-shadow:var(--shadow-lg);
+  }
+  .hero-card-logo{
+    width:90px; height:90px; margin:0 auto 22px;
+    background:rgba(236,72,153,.14); border-radius:20px;
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid rgba(236,72,153,.32);
+  }
+  .hero-card h3{
+    color:var(--white); text-align:center; font-size:1.15rem; margin-bottom:6px;
+  }
+  .hero-card .card-tag{
+    text-align:center; color:var(--gold-light); font-size:.74rem;
+    letter-spacing:2px; text-transform:uppercase; margin-bottom:24px;
+  }
+  .hero-card-list{ list-style:none; display:flex; flex-direction:column; gap:14px; }
+  .hero-card-list li{
+    display:flex; align-items:center; gap:12px;
+    color:rgba(255,255,255,.9); font-size:.92rem;
+  }
+  .hero-card-list .check{
+    width:22px; height:22px; border-radius:50%; flex-shrink:0;
+    background:rgba(212,175,55,.2); color:var(--gold-light);
+    display:flex; align-items:center; justify-content:center; font-size:.7rem;
+  }
+
+  /* ============ SECTION HEADERS ============ */
+  .section{ padding:90px 0; }
+  .section-head{ text-align:center; max-width:680px; margin:0 auto 56px; }
+  .section-eyebrow{
+    color:var(--gold); font-weight:700; letter-spacing:2px;
+    text-transform:uppercase; font-size:.78rem; margin-bottom:14px;
+    display:inline-block;
+  }
+  .section-head h2{
+    font-size:clamp(1.7rem, 3.2vw, 2.5rem); font-weight:800; margin-bottom:16px;
+    letter-spacing:-.5px;
+  }
+  .section-head p{ color:var(--gray-500); font-size:1.05rem; }
+
+  /* ============ ABOUT ============ */
+  .about{ background:var(--off-white); }
+  .about-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
+  }
+  .about-text h2{ font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:18px; }
+  .about-text p{ margin-bottom:18px; color:var(--gray-700); }
+  .about-text .lead{ font-size:1.1rem; color:var(--navy-700); font-weight:500; }
+  .about-list{ list-style:none; margin-top:24px; display:grid; gap:14px; }
+  .about-list li{ display:flex; gap:14px; align-items:flex-start; }
+  .about-list .ic{
+    width:34px; height:34px; flex-shrink:0; border-radius:8px;
+    background:var(--blue-soft); color:var(--blue);
+    display:flex; align-items:center; justify-content:center; font-weight:700;
+  }
+  .about-list strong{ color:var(--navy-800); display:block; margin-bottom:2px; }
+  .about-list span{ color:var(--gray-500); font-size:.92rem; }
+
+  .about-visual{
+    position:relative; border-radius:var(--radius); overflow:hidden;
+    background:linear-gradient(135deg, var(--navy-800), var(--navy-700));
+    padding:48px 36px; box-shadow:var(--shadow-lg);
+  }
+  .about-visual::before{
+    content:""; position:absolute; top:-50px; right:-50px;
+    width:200px; height:200px; border-radius:50%;
+    background:radial-gradient(circle, rgba(212,175,55,.2), transparent 70%);
+  }
+  .about-visual .kitex-badge{
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(212,175,55,.15); border:1px solid rgba(212,175,55,.4);
+    color:var(--gold-light); padding:8px 16px; border-radius:50px;
+    font-size:.8rem; font-weight:600; letter-spacing:.5px; margin-bottom:24px;
+  }
+  .about-visual h3{ color:var(--white); font-size:1.5rem; margin-bottom:10px; }
+  .about-visual p{ color:rgba(255,255,255,.8); font-size:.95rem; margin-bottom:28px; }
+  .about-visual .partnership-stats{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+    padding-top:24px; border-top:1px solid rgba(255,255,255,.12);
+  }
+  .about-visual .ps-num{ color:var(--gold-light); font-family:'Poppins'; font-size:1.5rem; font-weight:800; }
+  .about-visual .ps-lbl{ color:rgba(255,255,255,.7); font-size:.75rem; margin-top:4px; }
+
+  /* ============ PRODUCTS ============ */
+  .products-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:28px;
+  }
+  .product-card{
+    background:var(--white); border:1px solid var(--gray-100);
+    border-radius:var(--radius); padding:36px 30px;
+    transition:all var(--transition); position:relative; overflow:hidden;
+  }
+  .product-card::before{
+    content:""; position:absolute; top:0; left:0; width:100%; height:4px;
+    background:linear-gradient(90deg, var(--gold), var(--gold-light));
+    transform:scaleX(0); transform-origin:left; transition:transform var(--transition);
+  }
+  .product-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-md); border-color:transparent; }
+  .product-card:hover::before{ transform:scaleX(1); }
+  .product-icon{
+    width:64px; height:64px; border-radius:14px;
+    background:var(--blue-soft); color:var(--navy-800);
+    display:flex; align-items:center; justify-content:center; margin-bottom:22px;
+    transition:all var(--transition);
+  }
+  .product-card:hover .product-icon{ background:var(--navy-800); color:var(--gold-light); }
+  .product-card .tag{
+    position:absolute; top:24px; right:24px; font-size:.68rem; font-weight:700;
+    letter-spacing:1px; text-transform:uppercase; color:var(--gold);
+    background:rgba(212,175,55,.12); padding:5px 10px; border-radius:50px;
+  }
+  .product-card h3{ font-size:1.25rem; margin-bottom:10px; }
+  .product-card p{ color:var(--gray-500); font-size:.94rem; margin-bottom:18px; }
+  .product-features{ list-style:none; display:grid; gap:8px; }
+  .product-features li{
+    display:flex; align-items:center; gap:8px; font-size:.88rem; color:var(--gray-700);
+  }
+  .product-features .dot{ width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+
+  /* ============ FEATURES / WHY CHOOSE US ============ */
+  .why{ background:linear-gradient(180deg, var(--navy-900), var(--navy-800)); color:var(--white); }
+  .why .section-head h2{ color:var(--white); }
+  .why .section-head p{ color:rgba(255,255,255,.7); }
+  .why .section-eyebrow{ color:var(--gold-light); }
+  .features-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:24px;
+  }
+  .feature-card{
+    background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1);
+    border-radius:var(--radius); padding:32px 24px; text-align:center;
+    transition:all var(--transition);
+  }
+  .feature-card:hover{
+    background:rgba(255,255,255,.07); transform:translateY(-4px);
+    border-color:rgba(212,175,55,.4);
+  }
+  .feature-icon{
+    width:60px; height:60px; border-radius:50%; margin:0 auto 18px;
+    background:rgba(212,175,55,.15); border:1px solid rgba(212,175,55,.3);
+    display:flex; align-items:center; justify-content:center; color:var(--gold-light);
+  }
+  .feature-card h3{ color:var(--white); font-size:1.1rem; margin-bottom:10px; }
+  .feature-card p{ color:rgba(255,255,255,.7); font-size:.88rem; }
+
+  /* ============ CONTACT ============ */
+  .contact{ background:var(--navy-900); color:var(--white); padding:90px 0 0; }
+  .contact .section-head h2{ color:var(--white); }
+  .contact .section-head p{ color:rgba(255,255,255,.7); }
+  .contact .section-eyebrow{ color:var(--gold-light); }
+  .contact-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-bottom:64px;
+  }
+  .contact-info h3{ color:var(--white); font-size:1.4rem; margin-bottom:18px; }
+  .contact-info > p{ color:rgba(255,255,255,.75); margin-bottom:28px; }
+  .contact-item{
+    display:flex; gap:16px; align-items:flex-start; margin-bottom:20px;
+  }
+  .contact-item .ic{
+    width:44px; height:44px; flex-shrink:0; border-radius:12px;
+    background:rgba(212,175,55,.15); border:1px solid rgba(212,175,55,.3);
+    color:var(--gold-light); display:flex; align-items:center; justify-content:center;
+  }
+  .contact-item .lbl{ font-size:.78rem; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:1px; }
+  .contact-item .val{ color:var(--white); font-weight:500; margin-top:2px; }
+  .contact-item a.val:hover{ color:var(--gold-light); }
+  .quick-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:28px; }
+
+  .map-wrap{
+    border-radius:var(--radius); overflow:hidden; border:1px solid rgba(255,255,255,.12);
+    height:340px; position:relative;
+    background:
+      linear-gradient(135deg, rgba(74,144,226,.15), rgba(10,31,61,.4)),
+      repeating-linear-gradient(45deg, rgba(255,255,255,.025) 0 2px, transparent 2px 22px);
+  }
+  .map-mock{
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center; padding:24px;
+  }
+  .map-mock .pin{
+    width:64px; height:64px; border-radius:50%;
+    background:var(--gold); color:var(--navy-800);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(212,175,55,.4); margin-bottom:16px;
+    animation:bounce 2s infinite;
+  }
+  @keyframes bounce{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-8px); }
+  }
+  .map-mock h4{ color:var(--white); margin-bottom:6px; }
+  .map-mock p{ color:rgba(255,255,255,.75); font-size:.9rem; max-width:300px; }
+  .map-mock .map-btn{
+    margin-top:18px; display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25);
+    color:var(--white); padding:9px 18px; border-radius:50px;
+    font-size:.85rem; font-weight:500; transition:all var(--transition);
+  }
+  .map-mock .map-btn:hover{ background:rgba(255,255,255,.2); }
+
+  /* Footer bottom */
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    padding:28px 0; margin-top:0;
+  }
+  .footer-row{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+  }
+  .footer-row p{ color:rgba(255,255,255,.6); font-size:.86rem; }
+  .footer-row .gstin{ color:rgba(255,255,255,.6); font-size:.82rem; letter-spacing:.5px; }
+  .footer-socials{ display:flex; gap:12px; }
+  .footer-socials a{
+    width:38px; height:38px; border-radius:50%;
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
+    display:flex; align-items:center; justify-content:center;
+    color:rgba(255,255,255,.7); transition:all var(--transition);
+  }
+  .footer-socials a:hover{ background:var(--gold); color:var(--navy-800); border-color:var(--gold); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 980px){
+    .nav-links{
+      position:fixed; top:70px; left:0; right:0; flex-direction:column;
+      background:var(--navy-800); padding:24px; gap:8px; align-items:stretch;
+      border-top:1px solid rgba(255,255,255,.1);
+      transform:translateY(-150%); transition:transform .4s ease;
+      height:auto; max-height:calc(100vh - 70px); overflow-y:auto;
+    }
+    .nav-links.open{ transform:translateY(0); }
+    .nav-links a{ padding:12px 6px; font-size:1rem; border-bottom:1px solid rgba(255,255,255,.06); }
+    .nav-cta{ margin-top:10px; text-align:center; }
+    .menu-toggle{ display:flex; }
+    .hero{ padding:110px 0 70px; }
+    .hero-grid{ grid-template-columns:1fr; gap:40px; }
+    .hero-visual{ max-width:480px; margin:0 auto; }
+    .about-grid, .contact-grid{ grid-template-columns:1fr; gap:40px; }
+    .products-grid{ grid-template-columns:1fr; }
+    .features-grid{ grid-template-columns:repeat(2,1fr); }
+    .section{ padding:64px 0; }
+  }
+  @media (max-width: 560px){
+    .container{ padding:0 18px; }
+    .hero h1{ font-size:1.85rem; }
+    .hero p.sub{ font-size:1rem; }
+    .hero-cta{ flex-direction:column; align-items:stretch; }
+    .btn{ width:100%; }
+    .hero-stats{ gap:24px; }
+    .hero-stat .num{ font-size:1.5rem; }
+    .features-grid{ grid-template-columns:1fr; }
+    .about-visual .partnership-stats{ grid-template-columns:1fr; gap:14px; }
+    .footer-row{ flex-direction:column; text-align:center; }
+    .quick-actions{ flex-direction:column; align-items:stretch; }
+  }
+
+  /* Scroll reveal */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.visible{ opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="header">
+  <div class="container nav">
+    <a href="#hero" class="brand" aria-label="Future Marketing home">
+      <svg class="brand-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3d1652"/>
+            <stop offset="1" stop-color="#5a2168"/>
+          </linearGradient>
+        </defs>
+        <rect width="64" height="64" rx="14" fill="url(#lg1)"/>
+        <!-- Open box flaps (pink, like card icon) -->
+        <path d="M14 22 L24 14 L32 20 L40 14 L50 22 L46 28 L32 22 L18 28 Z" fill="#ec4899" opacity="0.95"/>
+        <!-- T-shirt emerging (white) -->
+        <path d="M22 30 L26 26 L30 28 L34 28 L38 26 L42 30 L42 46 Q42 50 38 50 L26 50 Q22 50 22 46 Z" fill="#ffffff"/>
+        <path d="M26 26 L30 28 L34 28 L38 26" stroke="#3d1652" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <!-- Pink accent dot -->
+        <circle cx="32" cy="38" r="2.2" fill="#ec4899"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Future<span class="gold">Marketing</span></span>
+        <span class="brand-tagline">Bridge to the Best</span>
+      </span>
+    </a>
+
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="{% url 'reviews' %}">Reviews</a></li>
+        <li><a href="{% url 'supplier_register' %}">Suppliers</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="{% url 'request_quote' %}" class="nav-cta">Request a Quote</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="hero-content reveal">
+      <span class="hero-eyebrow"><span class="dot"></span> Authorized Kitex Distributor · Meeyannoor, Kollam</span>
+      <h1>Premium Uniform Manufacturing &amp; <span class="gold-underline">Authorized Kitex Distributor</span></h1>
+      <p class="sub">Your trusted fabric and apparel supplier in Meeyannoor, Kollam. Delivering durable, high-craftsmanship textiles on schedule for institutions across Kerala.</p>
+      <div class="hero-cta">
+        <a href="{% url 'request_quote' %}" class="btn btn-primary"></a>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+          Request a Quote
+        </a>
+        <a href="#products" class="btn btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          View Our Catalog
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">15+</div><div class="lbl">Years of Trust</div></div>
+        <div class="hero-stat"><div class="num">200+</div><div class="lbl">Institutions Served</div></div>
+        <div class="hero-stat"><div class="num">100%</div><div class="lbl">Custom Tailoring</div></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="hero-card">
+        <div class="hero-card-logo">
+          <svg width="48" height="48" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 22 L24 14 L32 20 L40 14 L50 22 L46 28 L32 22 L18 28 Z" fill="#ec4899"/>
+            <path d="M22 30 L26 26 L30 28 L34 28 L38 26 L42 30 L42 46 Q42 50 38 50 L26 50 Q22 50 22 46 Z" fill="#ffffff"/>
+            <circle cx="32" cy="38" r="2.2" fill="#ec4899"/>
+          </svg>
+        </div>
+        <h3>Official Kitex Partnership</h3>
+        <div class="card-tag">Authorized Distributor</div>
+        <ul class="hero-card-list">
+          <li><span class="check">✓</span> Premium Kitex innerwear &amp; casual wear</li>
+          <li><span class="check">✓</span> Custom school &amp; college uniforms</li>
+          <li><span class="check">✓</span> Hospital scrubs &amp; lab coats</li>
+          <li><span class="check">✓</span> Kitex baby &amp; kids apparel</li>
+          <li><span class="check">✓</span> Bulk institutional pricing</li>
+          <li><span class="check">✓</span> On-time delivery across Kerala</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="about-text reveal">
+      <span class="section-eyebrow">About Future Marketing</span>
+      <h2>Where Craftsmanship Meets Institutional Trust</h2>
+      <p class="lead">Future Marketing is a premium textile manufacturer and the authorized distributor of Kitex products, headquartered in Meeyannoor, Kollam, Kerala.</p>
+      <p>For over a decade, we have specialized in high-volume, premium uniform manufacturing — partnering with schools, colleges, and healthcare institutions to deliver garments that combine durability, comfort, and precise institutional standards. Our in-house tailoring unit handles everything from single-school pilot runs to multi-campus rollouts of thousands of uniforms, all produced under strict quality control.</p>
+      <p>As an official Kitex distributor, we bring the same commitment to excellence to premium innerwear and casual wear, giving retail partners and institutions reliable access to one of South India's most trusted apparel brands.</p>
+      <ul class="about-list">
+        <li>
+          <span class="ic">1</span>
+          <div><strong>High-Volume Manufacturing</strong><span>Production capacity scaled for institutional bulk orders without compromising finish.</span></div>
+        </li>
+        <li>
+          <span class="ic">2</span>
+          <div><strong>Custom Tailoring</strong><span>Every uniform cut, sized, and branded to your institution's exact specifications.</span></div>
+        </li>
+        <li>
+          <span class="ic">3</span>
+          <div><strong>Official Kitex Partnership</strong><span>Authorized distribution of genuine Kitex products with full brand assurance.</span></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="about-visual reveal">
+      <span class="kitex-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L9 8 2 9l5 5-1 7 6-3 6 3-1-7 5-5-7-1z"/></svg>
+        Trusted Kitex Partner
+      </span>
+      <h3>Manufacturing Excellence, Backed by a Trusted Brand</h3>
+      <p>Our partnership with Kitex brings you the assurance of premium fabric quality, established brand trust, and reliable supply chains — all delivered through Future Marketing's local manufacturing expertise.</p>
+      <div class="partnership-stats">
+        <div><div class="ps-num">15+</div><div class="ps-lbl">Years Experience</div></div>
+        <div><div class="ps-num">200+</div><div class="ps-lbl">Institutions</div></div>
+        <div><div class="ps-num">50k+</div><div class="ps-lbl">Uniforms Delivered</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Product Categories</span>
+      <h2>Quality Clothing  &amp; Fabrics for Every Need</h2>
+      <p>From everyday casuals and ethnic wear to institutional uniforms and bulk textiles explore our complete range of apparel crafted for comfort, style, and lasting durability.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card reveal">
+        <span class="tag">Manufactured</span>
+        <div class="product-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5"/></svg>
+        </div>
+        <h3>School &amp; College Uniforms</h3>
+        <p>Durable, comfortable, and tailored to institution standards — from kindergarten to postgraduate campuses.</p>
+        <ul class="product-features">
+          <li><span class="dot"></span> Custom fabric &amp; color matching</li>
+          <li><span class="dot"></span> Embroidered school logos &amp; monograms</li>
+          <li><span class="dot"></span> Shirts, pants, skirts, ties &amp; blazers</li>
+          <li><span class="dot"></span> Size-graded for entire student bodies</li>
+        </ul>
+      </div>
+
+      <div class="product-card reveal">
+        <span class="tag">Manufactured</span>
+        <div class="product-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8h-3V4H7v4H4l2 4-2 8h16l-2-8 2-4z"/><path d="M9 4v4M15 4v4"/></svg>
+        </div>
+        <h3>Hospital &amp; Healthcare Apparel</h3>
+        <p>Hygienic, professional scrubs, lab coats, and staff uniforms designed for medical environments.</p>
+        <ul class="product-features">
+          <li><span class="dot"></span> Anti-bacterial, easy-sterilize fabrics</li>
+          <li><span class="dot"></span> Scrubs, lab coats &amp; OT gowns</li>
+          <li><span class="dot"></span> Department color-coded uniforms</li>
+          <li><span class="dot"></span> Name &amp; role embroidery available</li>
+        </ul>
+      </div>
+
+      <div class="product-card reveal">
+        <span class="tag">Distributed</span>
+        <div class="product-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 9a3 3 0 1 0-2-5.6A3 3 0 0 0 12 4a3 3 0 0 0-5 0 3 3 0 1 0-2 5.6C3.8 10.6 3 12.7 3 15a6 6 0 0 0 9 5.2A6 6 0 0 0 21 15c0-2.3-.8-4.4-2-6z"/><circle cx="9.5" cy="12" r="0.8" fill="currentColor" stroke="none"/><circle cx="14.5" cy="12" r="0.8" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h3>Baby &amp; Kids Products</h3>
+        <p>Genuine Kitex baby essentials and kids' apparel — soft, safe, and gentle on delicate skin, available for retail and bulk supply.</p>
+        <ul class="product-features">
+          <li><span class="dot"></span> Baby onesies, rompers &amp; grow suits</li>
+          <li><span class="dot"></span> Kids innerwear &amp; vests</li>
+          <li><span class="dot"></span> Soft cotton casual wear (0–12 yrs)</li>
+          <li><span class="dot"></span> Skin-friendly, certified fabrics</li>
+        </ul>
+      </div>
+
+      <div class="product-card reveal">
+        <span class="tag">Distributed</span>
+        <div class="product-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 17a3 3 0 1 0 6 0 3 3 0 0 0-6 0zM7 7a3 3 0 1 0-6 0 3 3 0 0 0 6 0z"/></svg>
+        </div>
+        <h3>Kitex Brand Products</h3>
+        <p>Authorized distribution of premium Kitex innerwear and casual wear for retail and bulk supply.</p>
+        <ul class="product-features">
+          <li><span class="dot"></span> Premium innerwear &amp; vests</li>
+          <li><span class="dot"></span> Casual &amp; lounge wear</li>
+          <li><span class="dot"></span> 100% genuine Kitex assurance</li>
+          <li><span class="dot"></span> Wholesale &amp; retail pricing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="section why" id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Why Choose Us</span>
+      <h2>Built for Institutions. Trusted for Quality.</h2>
+      <p>Four reasons why schools, colleges, and hospitals across Kerala choose Future Marketing as their uniform partner.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Premium Fabric Quality</h3>
+        <p>Hand-picked, certified fabrics that survive daily institutional wear and repeated industrial laundering.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M2 13h20"/></svg>
+        </div>
+        <h3>Bulk Order Customization</h3>
+        <p>From 100 to 10,000+ units — every order is tailored to your exact sizing, branding, and timeline needs.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>On-Time Institutional Delivery</h3>
+        <p>Term-start deadlines respected. We deliver complete uniform sets before the academic session begins.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L9 8 2 9l5 5-1 7 6-3 6 3-1-7 5-5-7-1z"/></svg>
+        </div>
+        <h3>Trusted Kitex Partner</h3>
+        <p>Official authorization brings genuine product assurance, brand warranty, and reliable supply.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Contact &amp; Location</span>
+      <h2>Visit Our Meeyannoor Facility</h2>
+      <p>Reach out for bulk orders, fabric samples, or Kitex distribution inquiries — we respond within one business day.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Get in Touch</h3>
+        <p>Whether you're a school administrator, hospital procurement officer, or retail partner, our team is ready to assist with custom quotes, samples, and institutional consultations.</p>
+
+        <div class="contact-item">
+          <span class="ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <div>
+            <div class="lbl">Address</div>
+            <div class="val">Kummalloor – Meeyannoor Road,<br>Meeyannoor, Kollam, Kerala</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <div>
+            <div class="lbl">Phone</div>
+            <a href="tel:+919633779978" class="val">+91 96337 79978</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
+          <div>
+            <div class="lbl">Email</div>
+            <a href="mailto:futuremarketing25@gmail.com" class="val">futuremarketing25@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="ic">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <div>
+            <div class="lbl">Business Hours</div>
+            <div class="val">Mon – Sat: 9:00 AM – 7:00 PM</div>
+          </div>
+        </div>
+
+        <div class="quick-actions">
+          <a href="tel:+919633779978" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Us
+          </a>
+          <a href="https://wa.me/919633779978?text=Hello%20Future%20Marketing%2C%20I'd%20like%20to%20inquire%20about%20bulk%20uniform%20orders." target="_blank" rel="noopener" class="btn btn-whatsapp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.6-1.4-3.7-3.2-.3-.5.3-.5.7-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.1 4.6 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            WhatsApp Inquiry
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="map-wrap">
+          <div class="map-mock">
+            <div class="pin">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#0a1f3d"/></svg>
+            </div>
+            <h4>Future Marketing — Meeyannoor</h4>
+            <p>Kummalloor – Meeyannoor Road, Meeyannoor, Kollam, Kerala 691526</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Meeyannoor+Kollam+Kerala" target="_blank" rel="noopener" class="map-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-row">
+      <p>© <span id="year"></span> Future Marketing. All rights reserved. · <span style="color:var(--gold-light)">Bridge to the Best</span></p>
+      <span class="gstin">GSTIN: 32RXBPS1530J1Z9</span>
+      <div class="footer-socials">
+        <a href="https://wa.me/919633779978" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.6-1.4-3.7-3.2-.3-.5.3-.5.7-1.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.1 4.6 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+        </a>
+        <a href="mailto:futuremarketing25@gmail.com" aria-label="Email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+        <a href="tel:+919633779978" aria-label="Phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // ============ MOBILE MENU ============
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    menuToggle.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+  });
+  // Close menu on link click
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // ============ HEADER SHADOW ON SCROLL ============
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) {
+      header.style.boxShadow = '0 4px 20px rgba(0,0,0,.18)';
+    } else {
+      header.style.boxShadow = 'none';
+    }
+  });
+
+  // ============ SCROLL REVEAL ============
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ============ YEAR ============
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
