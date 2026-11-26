@@ -1,47 +1,12 @@
-# from django.shortcuts import render
-# from . forms import ProductForm,RequestViewForm,RegisterViewModel
-# from django.core.mail import send_mail
-# from django.conf import settings
-# from django.contrib import messages
-
-# def welcomepage(request):
-#     return render(request,"welcomepage.html")
-
-# def register_view(request):
-#     if request.method == "POST":
-#         form = RequestViewForm(request.POST)
-#         if form.is_valid():
-#             user =form.save()
-#             fullname = form.cleaned_data["supplyername"]
-#             email = form.cleaned_data["email"]
-#             print("successfully saved..")
-
-# # EMAIL PART
-#             subject = "Registration Successfull"
-
-#             message = f"""
-#                         hello{fullname}, your registration has sucessfully completed
-
-#                         Thank You !
-#                     """
-#             send_mail(subject,message,settings.DEFAULT_FROM_EMAIL,[email],fail_silently=False)
-#             messages.success(request,"Registration successfull")
-#     else:
-#         form=RequestViewForm() 
-#     return render(request,"register_view.html",{"form":form})
-
-
-import logging
-
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.core.paginator import Paginator
 from django.db.models import Avg, Count
 from django.shortcuts import redirect, render
-
 from .forms import QuoteRequestForm, ReviewForm, SupplierRegisterForm
 from .models import Review
+import logging
 
 logger = logging.getLogger(__name__)
 
@@ -58,19 +23,28 @@ def welcomepage(request):
     return render(request, "welcomepage.html")
 
 
+
+
 def supplier_register(request):
     if request.method == "POST":
         form = SupplierRegisterForm(request.POST)
         if form.is_valid():
             supplier = form.save()
             _send_email(
-                "Registration successful - Future Marketing",
-                f"Hello {supplier.fullname},\n\nYour supplier registration with Future Marketing "
-                "has been completed successfully.\n\nThank you!",
+                "Successfully Registered as a Provider - Future Marketing",
+                f"Hello {supplier.fullname},\n\n"
+                "You have successfully registered as a provider with Future Marketing.\n\n"
+                "Our team will review your details and contact you soon. "
+                "If you have any questions, just reply to this email.\n\n"
+                "Thank you for joining us!\n"
+                "Future Marketing - Bridge to the Best",
                 supplier.email,
             )
-            messages.success(request, "Registration successful! We have emailed you a confirmation.")
-            return redirect("supplier_register")  # redirect after POST: no duplicate on refresh
+            messages.success(
+                request,
+                "Registration successful! A confirmation email has been sent to your email address.",
+            )
+            return redirect("supplier_register")
     else:
         form = SupplierRegisterForm()
     return render(request, "supplier_register.html", {"form": form})
